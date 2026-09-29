@@ -1,0 +1,2066 @@
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+
+  <meta name="theme-color" content="#24104f" />
+  <meta name="description" content="A little surprise made with love for Aki 💙" />
+
+  <!-- 💙 BLUE HEART WEBSITE ICON -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%99%3C/text%3E%3C/svg%3E"
+  />
+
+  <title>For Aki 💜</title>
+
+  <style>
+    :root {
+      --deep: #10051d;
+      --deep-2: #1b0830;
+      --purple: #54208b;
+      --purple-light: #9c5de5;
+      --lavender: #dfbaff;
+      --pink: #f4b8df;
+      --white: #fffaff;
+      --blue: #4da3ff;
+      --blue-light: #a9dcff;
+      --gold: #ffe7a3;
+
+      --glass: rgba(255,255,255,.13);
+      --glass-border: rgba(255,255,255,.25);
+
+      --shadow:
+        0 30px 90px rgba(24, 3, 42, .45);
+
+      --ease:
+        cubic-bezier(.22,1,.36,1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--white);
+
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(111, 53, 181, .5),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(78, 163, 255, .18),
+          transparent 25%
+        ),
+        radial-gradient(
+          circle at 50% 100%,
+          rgba(174, 76, 205, .3),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #160622,
+          #2c0d48,
+          #160923
+        );
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* =========================================================
+       BACKGROUND
+    ========================================================= */
+
+    .background {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(2px);
+      opacity: .45;
+      animation: orbFloat 12s ease-in-out infinite;
+    }
+
+    .orb.one {
+      width: 260px;
+      height: 260px;
+      left: -80px;
+      top: 10%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(161, 83, 239, .7),
+          transparent 70%
+        );
+    }
+
+    .orb.two {
+      width: 330px;
+      height: 330px;
+      right: -100px;
+      top: 35%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(74, 159, 255, .32),
+          transparent 70%
+        );
+
+      animation-delay: -4s;
+    }
+
+    .orb.three {
+      width: 240px;
+      height: 240px;
+      left: 35%;
+      bottom: -100px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(238, 100, 207, .32),
+          transparent 70%
+        );
+
+      animation-delay: -7s;
+    }
+
+    @keyframes orbFloat {
+      0%,100% {
+        transform:
+          translate(0,0)
+          scale(1);
+      }
+
+      50% {
+        transform:
+          translate(30px,-45px)
+          scale(1.15);
+      }
+    }
+
+    /* =========================================================
+       STARS
+    ========================================================= */
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .star {
+      position: absolute;
+
+      width: 4px;
+      height: 4px;
+
+      border-radius: 50%;
+
+      background: white;
+
+      box-shadow:
+        0 0 8px white,
+        0 0 18px rgba(255,255,255,.7);
+
+      animation:
+        starPulse
+        var(--duration)
+        ease-in-out
+        infinite;
+    }
+
+    @keyframes starPulse {
+      0%,100% {
+        opacity: .15;
+        transform: scale(.6);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.7);
+      }
+    }
+
+    /* =========================================================
+       FLOATING PURPLE TULIPS
+    ========================================================= */
+
+    .floating-hearts {
+      position: fixed;
+      inset: 0;
+
+      pointer-events: none;
+      overflow: hidden;
+
+      z-index: 3;
+    }
+
+    .floating-heart {
+      position: absolute;
+
+      bottom: -70px;
+
+      font-size: var(--size);
+
+      opacity: 0;
+
+      filter:
+        drop-shadow(
+          0 5px 10px
+          rgba(82, 28, 110, .35)
+        );
+
+      animation:
+        tulipRise
+        var(--duration)
+        linear
+        forwards;
+    }
+
+    @keyframes tulipRise {
+      0% {
+        transform:
+          translateY(0)
+          rotate(-15deg)
+          scale(.6);
+
+        opacity: 0;
+      }
+
+      15% {
+        opacity: .9;
+      }
+
+      50% {
+        transform:
+          translateY(-50vh)
+          translateX(var(--drift))
+          rotate(10deg)
+          scale(1);
+      }
+
+      80% {
+        opacity: .65;
+      }
+
+      100% {
+        transform:
+          translateY(-110vh)
+          translateX(var(--drift))
+          rotate(-15deg)
+          scale(1.2);
+
+        opacity: 0;
+      }
+    }
+
+    /* =========================================================
+       MAIN SCREEN
+    ========================================================= */
+
+    .screen {
+      position: relative;
+      z-index: 5;
+
+      min-height: 100vh;
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      padding: 30px 18px;
+    }
+
+    /* =========================================================
+       MAIN CARD
+    ========================================================= */
+
+    .card {
+      position: relative;
+
+      width: min(720px, 100%);
+
+      padding:
+        58px
+        42px
+        48px;
+
+      text-align: center;
+
+      border:
+        1px solid
+        var(--glass-border);
+
+      border-radius: 38px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,.18),
+          rgba(255,255,255,.06)
+        );
+
+      backdrop-filter:
+        blur(25px)
+        saturate(130%);
+
+      -webkit-backdrop-filter:
+        blur(25px)
+        saturate(130%);
+
+      box-shadow:
+        var(--shadow),
+        inset 0 1px 0 rgba(255,255,255,.25);
+
+      overflow: hidden;
+
+      animation:
+        cardEntrance
+        1s
+        var(--ease)
+        both;
+    }
+
+    .card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 300px;
+      height: 300px;
+
+      left: 50%;
+      top: -190px;
+
+      transform: translateX(-50%);
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(176,102,255,.35),
+          transparent 70%
+        );
+
+      filter: blur(20px);
+    }
+
+    @keyframes cardEntrance {
+      from {
+        opacity: 0;
+        transform:
+          translateY(45px)
+          scale(.94);
+      }
+
+      to {
+        opacity: 1;
+        transform:
+          translateY(0)
+          scale(1);
+      }
+    }
+
+    /* =========================================================
+       BLUE HEART
+    ========================================================= */
+
+    .hero-heart {
+      position: relative;
+
+      display: inline-flex;
+
+      justify-content: center;
+      align-items: center;
+
+      width: 90px;
+      height: 90px;
+
+      margin-bottom: 15px;
+
+      font-size: 55px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(104,190,255,.35),
+          rgba(255,255,255,.04)
+        );
+
+      border:
+        1px solid
+        rgba(130,205,255,.35);
+
+      box-shadow:
+        0 0 45px rgba(58,155,255,.35),
+        inset 0 0 25px rgba(255,255,255,.08);
+
+      animation:
+        heartBeat
+        2s
+        ease-in-out
+        infinite;
+    }
+
+    @keyframes heartBeat {
+      0%,100% {
+        transform: scale(1);
+      }
+
+      10% {
+        transform: scale(1.08);
+      }
+
+      20% {
+        transform: scale(1);
+      }
+
+      30% {
+        transform: scale(1.08);
+      }
+
+      40% {
+        transform: scale(1);
+      }
+    }
+
+    /* =========================================================
+       TEXT
+    ========================================================= */
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: 5px;
+
+      text-transform: uppercase;
+
+      color:
+        var(--blue-light);
+
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size:
+        clamp(48px, 10vw, 82px);
+
+      line-height: .95;
+
+      color: white;
+
+      text-shadow:
+        0 8px 35px
+        rgba(0,0,0,.35);
+
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      color: var(--blue-light);
+    }
+
+    .question {
+      max-width: 600px;
+
+      margin: auto;
+
+      font-size:
+        clamp(25px, 5vw, 40px);
+
+      line-height: 1.2;
+
+      color: #fff;
+
+      text-shadow:
+        0 4px 20px
+        rgba(0,0,0,.2);
+    }
+
+    .subtext {
+      max-width: 540px;
+
+      margin:
+        22px auto 0;
+
+      color:
+        rgba(255,255,255,.72);
+
+      font:
+        15px/1.75
+        Arial,
+        sans-serif;
+    }
+
+    /* =========================================================
+       BUTTONS
+    ========================================================= */
+
+    .buttons {
+      position: relative;
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      gap: 16px;
+
+      min-height: 90px;
+
+      margin-top: 30px;
+    }
+
+    .btn {
+      position: relative;
+
+      border: none;
+
+      border-radius: 999px;
+
+      padding:
+        16px
+        30px;
+
+      font-family:
+        Arial,
+        sans-serif;
+
+      font-size: 16px;
+      font-weight: 800;
+
+      transition:
+        transform .25s var(--ease),
+        box-shadow .25s ease,
+        background .25s ease;
+    }
+
+    .yes {
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #6c2bb2,
+          #a85ee4
+        );
+
+      box-shadow:
+        0 12px 35px
+        rgba(137,65,207,.4);
+    }
+
+    .yes::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      border-radius: inherit;
+
+      background:
+        linear-gradient(
+          110deg,
+          transparent 20%,
+          rgba(255,255,255,.4),
+          transparent 80%
+        );
+
+      transform:
+        translateX(-120%);
+
+      transition:
+        transform .7s ease;
+    }
+
+    .yes:hover::after {
+      transform:
+        translateX(120%);
+    }
+
+    .yes:hover {
+      transform:
+        translateY(-5px)
+        scale(1.04);
+
+      box-shadow:
+        0 18px 45px
+        rgba(137,65,207,.6);
+    }
+
+    .no {
+      color:
+        #e6d4f0;
+
+      background:
+        rgba(255,255,255,.08);
+
+      border:
+        1px solid
+        rgba(255,255,255,.25);
+
+      box-shadow:
+        0 10px 25px
+        rgba(0,0,0,.12);
+    }
+
+    .no:hover {
+      background:
+        rgba(255,255,255,.15);
+    }
+
+    /* =========================================================
+       HINT
+    ========================================================= */
+
+    .hint {
+      min-height: 25px;
+
+      margin-top: 15px;
+
+      color:
+        #c9a7db;
+
+      font:
+        italic 14px
+        Arial,
+        sans-serif;
+
+      transition:
+        opacity .3s ease;
+    }
+
+    /* =========================================================
+       DIVIDER
+    ========================================================= */
+
+    .divider {
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      gap: 12px;
+
+      margin-top: 28px;
+
+      color:
+        rgba(255,255,255,.35);
+
+      font-family: Arial,sans-serif;
+      font-size: 12px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+
+      width: 70px;
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255,255,255,.25)
+        );
+    }
+
+    .divider::after {
+      transform:
+        rotate(180deg);
+    }
+
+    /* =========================================================
+       PARADISE
+    ========================================================= */
+
+    #paradise {
+      position: relative;
+
+      min-height: 100vh;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 50% 8%,
+          rgba(255,255,255,.9),
+          transparent 17%
+        ),
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(176,105,226,.4),
+          transparent 30%
+        ),
+        linear-gradient(
+          180deg,
+          #caa9f0 0%,
+          #8760a4 45%,
+          #392344 100%
+        );
+    }
+
+    /* =========================================================
+       MOON
+    ========================================================= */
+
+    .moon {
+      position: absolute;
+
+      width: 170px;
+      height: 170px;
+
+      right: 9%;
+      top: 7%;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle at 35% 30%,
+          #fff,
+          #fff4c7 60%,
+          #ffe8a4
+        );
+
+      box-shadow:
+        0 0 40px rgba(255,244,190,.8),
+        0 0 100px rgba(255,235,160,.4);
+
+      animation:
+        moonFloat
+        7s
+        ease-in-out
+        infinite;
+    }
+
+    @keyframes moonFloat {
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    /* =========================================================
+       PARADISE CONTENT
+    ========================================================= */
+
+    .paradise-content {
+      position: relative;
+
+      z-index: 5;
+
+      min-height: 100vh;
+
+      padding:
+        110px
+        20px
+        230px;
+
+      text-align: center;
+    }
+
+    .paradise-content h2 {
+      max-width: 1000px;
+
+      margin:
+        0 auto;
+
+      font-size:
+        clamp(42px, 8vw, 82px);
+
+      line-height: 1.02;
+
+      color: white;
+
+      text-shadow:
+        0 8px 35px
+        rgba(47,17,65,.45);
+
+      animation:
+        revealTitle
+        1.2s
+        var(--ease)
+        both;
+    }
+
+    @keyframes revealTitle {
+      from {
+        opacity: 0;
+        transform:
+          translateY(35px)
+          scale(.95);
+      }
+
+      to {
+        opacity: 1;
+        transform:
+          translateY(0)
+          scale(1);
+      }
+    }
+
+    .paradise-subtitle {
+      margin-top: 15px;
+
+      font:
+        14px/1.6
+        Arial,
+        sans-serif;
+
+      color:
+        rgba(255,255,255,.8);
+
+      letter-spacing: 2px;
+    }
+
+    /* =========================================================
+       LOVE LETTER
+    ========================================================= */
+
+    .love-letter {
+      position: relative;
+
+      max-width: 850px;
+
+      margin:
+        35px auto 0;
+
+      padding:
+        30px;
+
+      text-align: left;
+
+      border-radius: 28px;
+
+      /* DARKER BACKGROUND FOR BETTER READABILITY */
+      background:
+        rgba(31, 13, 45, .78);
+
+      border:
+        1px solid
+        rgba(255,255,255,.25);
+
+      backdrop-filter:
+        blur(20px);
+
+      -webkit-backdrop-filter:
+        blur(20px);
+
+      box-shadow:
+        0 25px 70px
+        rgba(35,10,50,.3);
+
+      color:
+        rgba(255,255,255,.91);
+
+      font:
+        15px/1.9
+        Arial,
+        sans-serif;
+
+      animation:
+        letterReveal
+        1.3s
+        .25s
+        var(--ease)
+        both;
+    }
+
+    .love-letter::before {
+      content: "💙";
+
+      position: absolute;
+
+      top: -23px;
+      left: 50%;
+
+      transform:
+        translateX(-50%);
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      width: 46px;
+      height: 46px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,.18);
+
+      backdrop-filter:
+        blur(10px);
+
+      font-size: 23px;
+
+      box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.2);
+    }
+
+    @keyframes letterReveal {
+      from {
+        opacity: 0;
+        transform:
+          translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform:
+          translateY(0);
+      }
+    }
+
+    .love-letter p {
+      margin-bottom: 18px;
+    }
+
+    .love-letter p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================================================
+       THANK YOU CARD
+    ========================================================= */
+
+    .love-note {
+      max-width: 620px;
+
+      margin:
+        30px auto;
+
+      padding:
+        24px;
+
+      border-radius: 24px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,.22),
+          rgba(255,255,255,.08)
+        );
+
+      border:
+        1px solid
+        rgba(255,255,255,.28);
+
+      box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.18);
+
+      color: white;
+
+      font:
+        15px/1.8
+        Arial,
+        sans-serif;
+
+      text-align: center;
+    }
+
+    .love-note strong {
+      display: block;
+
+      margin-bottom: 6px;
+
+      font-size: 21px;
+    }
+
+    /* =========================================================
+       BACK BUTTON
+    ========================================================= */
+
+    .back {
+      border:
+        1px solid
+        rgba(255,255,255,.3);
+
+      background:
+        rgba(255,255,255,.1);
+
+      color: white;
+
+      padding:
+        12px 22px;
+
+      border-radius: 999px;
+
+      transition:
+        .3s ease;
+    }
+
+    .back:hover {
+      transform:
+        translateY(-3px);
+
+      background:
+        rgba(255,255,255,.18);
+    }
+
+    /* =========================================================
+       FIELD
+    ========================================================= */
+
+    .field {
+      position: absolute;
+
+      left: -10%;
+      right: -10%;
+      bottom: -20px;
+
+      height: 45%;
+
+      transform:
+        skewY(-4deg);
+
+      background:
+        radial-gradient(
+          ellipse at 10% 80%,
+          #744185 0 8%,
+          transparent 9%
+        ),
+        radial-gradient(
+          ellipse at 30% 75%,
+          #8e519c 0 10%,
+          transparent 11%
+        ),
+        radial-gradient(
+          ellipse at 55% 82%,
+          #673776 0 11%,
+          transparent 12%
+        ),
+        radial-gradient(
+          ellipse at 80% 76%,
+          #87508f 0 12%,
+          transparent 13%
+        ),
+        linear-gradient(
+          180deg,
+          #9c68a8,
+          #392044
+        );
+
+      z-index: 0;
+    }
+
+    /* =========================================================
+       TULIPS
+    ========================================================= */
+
+    .tulips {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+
+      bottom: 5%;
+
+      height: 42%;
+
+      z-index: 2;
+
+      display: flex;
+
+      align-items: flex-end;
+      justify-content: space-around;
+
+      padding:
+        0 4%;
+    }
+
+    .tulip {
+      position: relative;
+
+      width: 58px;
+      height: 145px;
+
+      transform-origin:
+        bottom center;
+
+      animation:
+        tulipSway
+        4s
+        ease-in-out
+        infinite;
+    }
+
+    .tulip:nth-child(2n) {
+      animation-delay: -1s;
+      transform: scale(1.15);
+    }
+
+    .tulip:nth-child(3n) {
+      animation-delay: -2s;
+      transform: scale(.8);
+    }
+
+    .tulip:nth-child(4n) {
+      animation-delay: -2.8s;
+    }
+
+    @keyframes tulipSway {
+      0%,100% {
+        rotate: -1deg;
+      }
+
+      50% {
+        rotate: 3deg;
+      }
+    }
+
+    .stem {
+      position: absolute;
+
+      width: 7px;
+      height: 105px;
+
+      left: 27px;
+      bottom: 0;
+
+      border-radius: 10px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #315d3d,
+          #4f8957
+        );
+    }
+
+    .leaf {
+      position: absolute;
+
+      width: 42px;
+      height: 18px;
+
+      left: 0;
+      bottom: 43px;
+
+      border-radius:
+        100%
+        0
+        100%
+        0;
+
+      background:
+        linear-gradient(
+          135deg,
+          #4d8654,
+          #2e6338
+        );
+
+      transform:
+        rotate(24deg);
+    }
+
+    .leaf.r {
+      left: 25px;
+
+      transform:
+        scaleX(-1)
+        rotate(24deg);
+    }
+
+    .flower {
+      position: absolute;
+
+      top: 5px;
+      left: 4px;
+
+      width: 51px;
+      height: 57px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #7933a3,
+          #d07ce7
+        );
+
+      border-radius:
+        50%
+        50%
+        45%
+        45%;
+
+      clip-path:
+        polygon(
+          0 12%,
+          22% 0,
+          38% 18%,
+          52% 0,
+          68% 18%,
+          88% 0,
+          100% 12%,
+          91% 65%,
+          78% 88%,
+          50% 100%,
+          22% 88%,
+          9% 65%
+        );
+
+      filter:
+        drop-shadow(
+          0 10px 10px
+          rgba(53,17,69,.3)
+        );
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 650px) {
+
+      .card {
+        padding:
+          45px
+          22px
+          35px;
+
+        border-radius: 30px;
+      }
+
+      .hero-heart {
+        width: 75px;
+        height: 75px;
+
+        font-size: 45px;
+      }
+
+      .buttons {
+        gap: 10px;
+      }
+
+      .btn {
+        padding:
+          14px
+          22px;
+      }
+
+      .moon {
+        width: 100px;
+        height: 100px;
+
+        right: 4%;
+      }
+
+      .paradise-content {
+        padding:
+          90px
+          15px
+          210px;
+      }
+
+      .love-letter {
+        padding:
+          25px 20px;
+
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .tulips {
+        gap: 3px;
+      }
+
+      .tulip {
+        transform: scale(.65);
+      }
+
+      .tulip:nth-child(2n) {
+        transform: scale(.75);
+      }
+
+      .tulip:nth-child(3n) {
+        transform: scale(.55);
+      }
+    }
+
+    @media (max-width: 400px) {
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        min-width: 150px;
+      }
+
+      .no {
+        position: relative;
+      }
+
+      .love-letter {
+        font-size: 13.5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BACKGROUND -->
+
+  <div class="background" aria-hidden="true">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+  </div>
+
+  <div class="stars" id="stars" aria-hidden="true"></div>
+
+  <!-- FLOATING TULIPS -->
+
+  <div
+    class="floating-hearts"
+    id="floatingHearts"
+    aria-hidden="true">
+  </div>
+
+  <!-- QUESTION SCREEN -->
+
+  <main
+    id="questionScreen"
+    class="screen">
+
+    <section class="card">
+
+      <div class="hero-heart">
+        💙
+      </div>
+
+      <div class="eyebrow">
+        a little question for aki
+      </div>
+
+      <h1>
+        Hi, <span>Aki</span> 💜
+      </h1>
+
+      <div class="question">
+        Would you like to be my girlfriend?
+      </div>
+
+      <p class="subtext">
+        I made this little place just for you.
+        Whatever your answer is, thank you for taking
+        a moment to see it. 🌷
+      </p>
+
+      <div
+        class="buttons"
+        id="buttonArea">
+
+        <button
+          class="btn yes"
+          id="yesBtn">
+          Yes 💜
+        </button>
+
+        <button
+          class="btn no"
+          id="noBtn">
+          No
+        </button>
+
+      </div>
+
+      <div
+        class="hint"
+        id="hint">
+      </div>
+
+      <div class="divider">
+        made with love 💙
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- PARADISE / YES SCREEN -->
+
+  <section
+    id="paradise"
+    class="hidden">
+
+    <div class="moon"></div>
+
+    <div class="paradise-content">
+
+      <h2>
+        Aking Girlfriend<br>
+        Naks! HAHAHAHA 💜
+      </h2>
+
+      <div class="paradise-subtitle">
+        AFTER ALMOST FOUR YEARS... WE'RE OFFICIAL. 💙
+      </div>
+
+      <!-- LOVE LETTER -->
+
+      <article class="love-letter">
+
+        <p>
+          and yes ito na talaga aki, alam kong eto na yung
+          pinaka hinihintay nating dalawa talaga yung araw
+          na magkakaroon na tayo ng label pagkatapos ng
+          halos apat na taon nating pagiging mag MU,
+          ang dami na nating pinagdaanan sa halos apat na
+          taon na magkasama tayo ang dami nating masasayang
+          alaala ang dami ring pagsubok at ang dami kong
+          pagkakamali hehe aminado naman ako minsan.
+        </p>
+
+        <p>
+          at hindi ko rin alam kung nasaan ako ngayon kung
+          hindi kita naging aki talagang masasabi ko na naging
+          malaking parte ka ng buhay ko hindi lang basta parte
+          kundi isa ka sa mga taong naging dahilan kung bakit
+          marami akong natutunan tungkol sa pagmamahal,
+          tungkol sa pag intindi at tungkol sa pagpili sa
+          isang tao araw araw.
+        </p>
+
+        <p>
+          akalain mo yun aki halos apat na taon na tayo at
+          sa loob ng tatlong taon na yun naghihintay tayo
+          para sa araw na to like tago tago pa tayo na parang
+          sobrang illegal yung ginagawa natin haha.
+        </p>
+
+        <p>
+          alam kong marami akong pagkukulang sayo alam kong
+          nasaktan kita napaiyak kita at may mga pagkakataon
+          na hindi ko naibibigay sayo yung pagmamahal at
+          atensyon na deserve mo.
+        </p>
+
+        <p>
+          alam kong may mga bagay akong nagawa na sana hindi
+          ko na lang ginawa at may mga pagkakataon din na
+          sana mas inintindi kita, pero sa kabila ng lahat
+          ng yun nandito ka pa rin.
+        </p>
+
+        <p>
+          pinipili mo pa rin ako, minamahal mo pa rin ako,
+          at sobrang nagpapasalamat ako sayo dahil kahit
+          nakita mo na yung mga flaws ko kahit alam mo na
+          yung mga pagkakamali ko hindi mo pa rin ako basta
+          iniwan.
+        </p>
+
+        <p>
+          alam kong hindi naging madali sayo ang mahalin ako
+          pero pinili mo pa rin akong intindihin at mahalin
+          kaya gusto kong malaman mo na sobrang halaga mo
+          sakin aki.
+        </p>
+
+        <p>
+          hindi ko man palaging nasasabi at hindi ko man
+          palaging naipapakita sa paraan na gusto mo pero
+          mahal na mahal talaga kita.
+        </p>
+
+        <p>
+          ikaw yung taong nakasama ko sa maraming pagbabago
+          sa buhay ko ikaw yung taong nakakita sakin sa mga
+          panahong maayos ako at pati na rin sa mga panahong
+          hindi ko maintindihan ang sarili ko at sa lahat
+          ng yun nandyan ka pa rin.
+        </p>
+
+        <p>
+          kaya sa araw na to gusto kong sabihin sayo na ayoko
+          nang tawagin tayong mag MU lang.
+        </p>
+
+        <p>
+          gusto ko nang tawagin kang girlfriend ko,
+          gusto kong maging boyfriend mo na at gusto kong
+          magkaroon na tayo ng label na matagal na nating
+          hinihintay.
+        </p>
+
+        <p>
+          halos apat na taon tayong naghintay para sa araw
+          na to kaya gusto kong sulitin natin yung pagkakataon
+          na to.
+        </p>
+
+        <p>
+          gusto kong simula ngayon mas lalo kitang mahalin,
+          mas lalo kitang intindihin, mas lalo kitang
+          pahahalagahan at mas lalo kong ipaparamdam sayo
+          kung gaano ka kahalaga sakin.
+        </p>
+
+        <p>
+          hindi ko maipapangako na magiging perpekto ako
+          dahil alam kong marami pa rin akong pagkukulang
+          pero maipapangako ko na patuloy akong matututo
+          para sayo at para sa atin.
+        </p>
+
+        <p>
+          kapag nagkamali ako susubukan kong itama,
+          kapag may problema tayo pipiliin kong ayusin
+          kasama ka, kapag nahihirapan ka gusto kong maging
+          taong masasandalan mo.
+        </p>
+
+        <p>
+          at sa bawat araw na lilipas gusto kong ikaw pa rin
+          yung piliin ko.
+        </p>
+
+        <p>
+          aki sobrang nagpapasalamat ako sayo.
+          salamat sa pagmamahal mo, salamat sa pag intindi mo,
+          salamat sa pagtitiis mo sakin, salamat sa lahat
+          ng pagkakataong hindi mo ako binitawan.
+        </p>
+
+        <p>
+          at higit sa lahat salamat dahil dumating ka sa
+          buhay ko.
+        </p>
+
+        <p>
+          hindi ko alam kung ano ang magiging buhay ko kung
+          hindi kita nakilala pero alam kong masaya ako
+          dahil naging parte ka nito.
+        </p>
+
+        <p>
+          at ngayon gusto kong gumawa tayo ng panibagong
+          bahagi ng kwento natin hindi na bilang mag MU
+          kundi bilang tayo.
+        </p>
+
+        <p>
+          yieeee opisyal na tayo aki.
+          ikaw na ang girlfriend ko at ako na ang boyfriend mo.
+        </p>
+
+        <p>
+          at sana kahit lumipas pa ang maraming taon ganito
+          pa rin tayo, patuloy na nagmamahalan, patuloy na
+          nagpipilian, patuloy na nag iintindihan, at patuloy
+          na lumalaban para sa isa't isa.
+        </p>
+
+        <p>
+          mahal na mahal kita aki at mula ngayon gusto kong
+          mas lalo pa kitang mahalin kaysa kahapon.
+        </p>
+
+        <p>
+          ikaw ang pinili ko noon,
+          ikaw ang pinipili ko ngayon,
+          at ikaw pa rin ang pipiliin ko
+          sa mga susunod pang araw.
+        </p>
+
+        <p>
+          <strong>
+            I love you very much, Aki. 💙
+          </strong>
+        </p>
+
+      </article>
+
+      <!-- THANK YOU -->
+
+      <div class="love-note">
+
+        <strong>
+          Thank you for saying yes. 💙
+        </strong>
+
+        I hope this little surprise makes you smile today. 🌷
+
+        <br><br>
+
+        <span>
+          Here's to our next chapter together. 💜
+        </span>
+
+      </div>
+
+      <button
+        class="back"
+        id="backBtn">
+
+        ← Go back
+
+      </button>
+
+    </div>
+
+    <!-- TULIP FIELD -->
+
+    <div
+      class="tulips"
+      aria-hidden="true">
+
+      <div class="tulip">
+        <div class="flower"></div>
+        <div class="stem"></div>
+        <div class="leaf"></div>
+        <div class="leaf r"></div>
+      </div>
+
+      <div class="tulip">
+        <div class="flower"></div>
+        <div class="stem"></div>
+        <div class="leaf"></div>
+        <div class="leaf r"></div>
+      </div>
+
+      <div class="tulip">
+        <div class="flower"></div>
+        <div class="stem"></div>
+        <div class="leaf"></div>
+        <div class="leaf r"></div>
+      </div>
+
+      <div class="tulip">
+        <div class="flower"></div>
+        <div class="stem"></div>
+        <div class="leaf"></div>
+        <div class="leaf r"></div>
+      </div>
+
+      <div class="tulip">
+        <div class="flower"></div>
+        <div class="stem"></div>
+        <div class="leaf"></div>
+        <div class="leaf r"></div>
+      </div>
+
+      <div class="tulip">
+        <div class="flower"></div>
+        <div class="stem"></div>
+        <div class="leaf"></div>
+        <div class="leaf r"></div>
+      </div>
+
+      <div class="tulip">
+        <div class="flower"></div>
+        <div class="stem"></div>
+        <div class="leaf"></div>
+        <div class="leaf r"></div>
+      </div>
+
+      <div class="tulip">
+        <div class="flower"></div>
+        <div class="stem"></div>
+        <div class="leaf"></div>
+        <div class="leaf r"></div>
+      </div>
+
+    </div>
+
+    <div class="field"></div>
+
+  </section>
+
+  <script>
+
+    const questionScreen =
+      document.getElementById("questionScreen");
+
+    const paradise =
+      document.getElementById("paradise");
+
+    const yesBtn =
+      document.getElementById("yesBtn");
+
+    const noBtn =
+      document.getElementById("noBtn");
+
+    const hint =
+      document.getElementById("hint");
+
+    const backBtn =
+      document.getElementById("backBtn");
+
+    const buttonArea =
+      document.getElementById("buttonArea");
+
+    const stars =
+      document.getElementById("stars");
+
+    const floatingHearts =
+      document.getElementById("floatingHearts");
+
+    /* =========================================================
+       CREATE STARS
+    ========================================================= */
+
+    for (let i = 0; i < 70; i++) {
+
+      const star =
+        document.createElement("span");
+
+      star.className = "star";
+
+      star.style.left =
+        Math.random() * 100 + "%";
+
+      star.style.top =
+        Math.random() * 100 + "%";
+
+      star.style.setProperty(
+        "--duration",
+        (3 + Math.random() * 5) + "s"
+      );
+
+      star.style.animationDelay =
+        Math.random() * 5 + "s";
+
+      stars.appendChild(star);
+    }
+
+    /* =========================================================
+       FLOATING PURPLE TULIPS
+    ========================================================= */
+
+    function createHeart() {
+
+      const heart =
+        document.createElement("span");
+
+      heart.className =
+        "floating-heart";
+
+      const tulips = [
+        "💜",
+        "🥺",
+        "💙",
+        "🌷",
+        "😚"
+      ];
+
+      heart.textContent =
+        tulips[
+          Math.floor(
+            Math.random() * tulips.length
+          )
+        ];
+
+      heart.style.left =
+        Math.random() * 100 + "%";
+
+      heart.style.setProperty(
+        "--size",
+        (16 + Math.random() * 20) + "px"
+      );
+
+      heart.style.setProperty(
+        "--duration",
+        (5 + Math.random() * 5) + "s"
+      );
+
+      heart.style.setProperty(
+        "--drift",
+        (-80 + Math.random() * 160) + "px"
+      );
+
+      floatingHearts.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 11000);
+    }
+
+    /* =========================================================
+       CONTINUOUS TULIPS
+    ========================================================= */
+
+    setInterval(
+      createHeart,
+      900
+    );
+
+    /* =========================================================
+       NO BUTTON
+    ========================================================= */
+
+    let noClicks = 0;
+
+    const playfulLines = [
+
+      "are you sure? 🥺",
+
+      "the No button is getting shy...",
+
+      "hmm... maybe try again? 🌷",
+
+      "it really wants you to reconsider 😭",
+
+      "okay okay, one more chance? 💜",
+
+      "the button is running away! 😂",
+
+      "Akiiiii 😭💙",
+
+      "don't make me cry... 🥺",
+
+      "the Yes button is looking lonely 👀",
+
+      "last chance, Aki... 💙"
+
+    ];
+
+    noBtn.addEventListener(
+      "click",
+      () => {
+
+        noClicks++;
+
+        hint.textContent =
+          playfulLines[
+            Math.min(
+              noClicks - 1,
+              playfulLines.length - 1
+            )
+          ];
+
+        const area =
+          buttonArea.getBoundingClientRect();
+
+        const maxX =
+          Math.min(
+            150,
+            Math.max(
+              30,
+              area.width / 2 - 80
+            )
+          );
+
+        const maxY = 55;
+
+        const randomX =
+          (Math.random() * 2 - 1) *
+          maxX;
+
+        const randomY =
+          (Math.random() * 2 - 1) *
+          maxY;
+
+        noBtn.style.transform =
+          `translate(${randomX}px, ${randomY}px)`;
+
+        const scale =
+          Math.min(
+            1 + noClicks * .04,
+            1.25
+          );
+
+        noBtn.style.fontSize =
+          `${Math.min(
+            16 + noClicks * .5,
+            21
+          )}px`;
+
+        noBtn.style.transform +=
+          ` scale(${scale})`;
+
+        for (let i = 0; i < 4; i++) {
+          setTimeout(
+            createHeart,
+            i * 120
+          );
+        }
+
+      }
+    );
+
+    /* =========================================================
+       YES BUTTON
+    ========================================================= */
+
+    yesBtn.addEventListener(
+      "click",
+      () => {
+
+        for (let i = 0; i < 25; i++) {
+
+          setTimeout(
+            createHeart,
+            i * 80
+          );
+
+        }
+
+        questionScreen.classList.add(
+          "hidden"
+        );
+
+        paradise.classList.remove(
+          "hidden"
+        );
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+
+      }
+    );
+
+    /* =========================================================
+       BACK BUTTON
+    ========================================================= */
+
+    backBtn.addEventListener(
+      "click",
+      () => {
+
+        paradise.classList.add(
+          "hidden"
+        );
+
+        questionScreen.classList.remove(
+          "hidden"
+        );
+
+        noBtn.style.transform =
+          "";
+
+        hint.textContent =
+          "";
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+
+      }
+    );
+
+    /* =========================================================
+       CLICK PARADISE = PURPLE TULIP
+    ========================================================= */
+
+    paradise.addEventListener(
+      "click",
+      (event) => {
+
+        if (
+          event.target === backBtn
+        ) {
+          return;
+        }
+
+        const tulip =
+          document.createElement("span");
+
+        tulip.textContent = "🌷";
+
+        tulip.style.position =
+          "fixed";
+
+        tulip.style.left =
+          event.clientX + "px";
+
+        tulip.style.top =
+          event.clientY + "px";
+
+        tulip.style.pointerEvents =
+          "none";
+
+        tulip.style.zIndex =
+          "100";
+
+        tulip.style.fontSize =
+          "25px";
+
+        tulip.style.transition =
+          "1s ease";
+
+        document.body.appendChild(
+          tulip
+        );
+
+        requestAnimationFrame(() => {
+
+          tulip.style.transform =
+            "translateY(-100px) rotate(15deg) scale(1.5)";
+
+          tulip.style.opacity =
+            "0";
+
+        });
+
+        setTimeout(
+          () => tulip.remove(),
+          1000
+        );
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
